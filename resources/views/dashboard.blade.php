@@ -19,7 +19,7 @@
 
 
 @section('content')
-<main role="main" class="container mt-5">
+<main role="main" class="container my-5">
     @livewire('dashboard')
 </main>
 @endsection
