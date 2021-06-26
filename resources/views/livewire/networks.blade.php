@@ -29,19 +29,16 @@
                     <tr>
                         <th>
                             <div class="form-group">
-                                <select class="form-select">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" wire:model="icon">
+                                    <option selected value="teste">Open this select menu</option>
                                 </select>
                             </div>
                         </th>
                         <td>
-                            <input type="text" class="form-control" placeholder="Siga-me no Facebook">
+                            <input type="text" class="form-control" placeholder="Siga-me no Facebook" wire:model="title">
                         </td>
                         <td>
-                            <input type="text" class="form-control" placeholder="https://facebook.com/adobeacrobat">
+                            <input type="text" class="form-control" placeholder="https://facebook.com/adobeacrobat" wire:model="action">
                         </td>
                         <td>
                             <select class="form-select">

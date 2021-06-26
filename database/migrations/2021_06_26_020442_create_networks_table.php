@@ -17,6 +17,8 @@ class CreateNetworksTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('icon');
+            $table->string('action');
+            $table->string('action_type');
             $table->string('background_color');
             $table->string('icon_color');
             $table->timestamps();
