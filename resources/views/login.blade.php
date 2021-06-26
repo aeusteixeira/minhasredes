@@ -78,7 +78,8 @@
 <body class="text-center">
 
     <main class="form-signin">
-        <form method="POST" action="{{ routes('login') }}">
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
             <h1 class="h3 mb-3 fw-normal">Meus links</h1>
 
             <div class="form-floating">
