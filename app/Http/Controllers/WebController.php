@@ -41,5 +41,10 @@ class WebController extends Controller
         return redirect()->route('index');
     }
 
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+
 }
 
