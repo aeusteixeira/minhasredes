@@ -13,13 +13,18 @@
     @livewireStyles
 @endpush
 
-@push('script')
+@push('scripts')
     @livewireScripts
 @endpush
 
 
 @section('content')
 <main role="main" class="container my-5">
-    @livewire('dashboard')
+    <div class="card shadow p-3">
+        <div class="card-body">
+            @livewire('dashboard')
+            @livewire('networks')
+        </div>
+    </div>
 </main>
 @endsection
