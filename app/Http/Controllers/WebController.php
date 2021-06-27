@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Network;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +12,10 @@ class WebController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('welcome', [
+            'setting' => Setting::findOrFail(1),
+            'networks' => Network::all(),
+        ]);
     }
 
     public function login()

@@ -20,25 +20,20 @@
             <div class="media text-center">
                 <img src="https://uifaces.co/our-content/donated/gPZwCbdS.jpg" class="rounded-circle" alt="image" width="100px" height="100px">
                 <div class="media-body m-2">
-                  <h5 class="align-items-center mt-2">Dr. Rodrigo Nahas</h5>
+                  <h5 class="align-items-center mt-2">
+                      {{ $setting->name }}
+                  </h5>
                   <p>
-                    Seja bem-vindo(a) a maior comunidade de Macro e Micro Cirurgia Plástica Periodontal aplicada à Odontologia Interdisciplinar do Brasil.
+                    {{ $setting->description }}
                   </p>
                 </div>
               </div>
               <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action py-2">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="#" class="list-group-item list-group-item-action py-2">
-                    <i class="fab fa-facebook-square"></i> Facebook
-                </a>
-                <a href="#" class="list-group-item list-group-item-action py-2">
-                    <i class="fab fa-linkedin"></i> Linkedin
-                </a>
-                <a href="#" class="list-group-item list-group-item-action py-2">
-                    <i class="fas fa-link"></i> Blog
-                </a>
+                @foreach ($networks as $network)
+                    <a href="{{ $network->action_type.$network->action }}" class="list-group-item list-group-item-action py-2" target="_blank">
+                        <i class="{{ $network->icon }}"></i> {{ $network->title }}
+                    </a>
+                @endforeach
               </div>
         </div>
     </div>
