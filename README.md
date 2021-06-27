@@ -35,7 +35,7 @@ php artisan migrate --seed
 Em seguida, rode o comando de storage para poder existir as imagens sem problema
 
 ```
-php artisan migrate --seed
+php artisan storage:link
 ```
 
 ## Rotas
