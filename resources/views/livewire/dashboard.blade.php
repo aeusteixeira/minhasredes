@@ -10,13 +10,10 @@
         </div>
         <div class="media-body m-2">
             <h5 class="align-items-center mt-2">
-                <input type="text" name="name" id="name" class="form-control text-center border-0"
-                    value="Dr. Rodrigo Nahas">
+                <input type="text" name="name" id="name" class="form-control text-center border-0" wire:model.lazy="name">
             </h5>
             <p>
-                <textarea name="description" id="description" class="form-control border-0">
-Seja bem-vindo(a) a maior comunidade de Macro e Micro Cirurgia Plástica Periodontal aplicada à Odontologia Interdisciplinar do Brasil.
-</textarea>
+                <textarea name="description" id="description" class="form-control border-0" wire:model.lazy="description"></textarea>
             </p>
         </div>
     </div>
