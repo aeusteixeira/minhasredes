@@ -1,20 +1,22 @@
 <div>
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action py-2">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2">
-            <i class="fab fa-facebook-square"></i> Facebook
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2">
-            <i class="fab fa-linkedin"></i> Linkedin
-        </a>
-        <a href="#" class="list-group-item list-group-item-action py-2">
-            <i class="fas fa-link"></i> Blog
-        </a>
-    </div>
+    <ol class="list-group">
+        @forelse ($networks as $network)
+        <li class="list-group-item d-flex justify-content-between align-items-start py-2">
+            <div class="ms-2 me-auto">
+              <div class="">
+                  <i class="fab fa-facebook-square"></i> {{ $network->title }}
+              </div>
+            </div>
+            <button class="btn btn-danger badge bg-danger rounded-pill" wire:click="delete({{ $network->id }})">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </li>
+        @empty
+        <p class="text-center text-secondary">Nenhum link cadastrado</p>
+        @endforelse
+      </ol>
     <hr>
-    <form class="row g-3">
+    <form class="row g-3" wire:submit="submit">
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -29,23 +31,21 @@
                     <tr>
                         <th>
                             <div class="form-group">
-                                <select class="form-select">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" wire:model="icon">
+                                    <option value="icon_1">Icon 1</option>
+                                    <option value="icon_2">Icon 2</option>
                                 </select>
                             </div>
                         </th>
                         <td>
-                            <input type="text" class="form-control" placeholder="Siga-me no Facebook">
+                            <input maxlength="244" type="text" class="form-control" placeholder="Siga-me no Facebook" wire:model="title">
                         </td>
                         <td>
-                            <input type="text" class="form-control" placeholder="https://facebook.com/adobeacrobat">
+                            <input maxlength="244" type="text" class="form-control" placeholder="https://facebook.com/adobeacrobat" wire:model="action">
                         </td>
                         <td>
-                            <select class="form-select">
-                                <option value="" selected>Link</option>
+                            <select class="form-select" wire:model="action_type">
+                                <option value="''" selected>Link</option>
                                 <option value="mailto:">E-mail</option>
                                 <option value="tel:">Telefone</option>
                             </select>
@@ -55,7 +55,7 @@
             </table>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary">Cadastrar</button>
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
     </form>
 </div>

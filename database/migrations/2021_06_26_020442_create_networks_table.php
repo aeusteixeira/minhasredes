@@ -16,9 +16,11 @@ class CreateNetworksTable extends Migration
         Schema::create('networks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('icon');
-            $table->string('background_color');
-            $table->string('icon_color');
+            $table->string('icon')->nullable()->default('fas fa-link');
+            $table->string('action')->nullable();
+            $table->string('action_type')->nullable();
+            $table->string('background_color')->default('bg-light');
+            $table->string('icon_color')->default('text-dark');
             $table->timestamps();
         });
     }
