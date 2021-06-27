@@ -32,6 +32,12 @@ Após preencher as seeders corretamente, verifique o seu .env se a conexão do b
 php artisan migrate --seed
 ```
 
+Em seguida, rode o comando de storage para poder existir as imagens sem problema
+
+```
+php artisan migrate --seed
+```
+
 ## Rotas
 
 Rotas utilizaveis na versão 1.0.

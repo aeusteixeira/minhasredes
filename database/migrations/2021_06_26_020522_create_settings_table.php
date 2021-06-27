@@ -16,6 +16,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('image')->nullable();
             $table->text('description')->nullable();
             $table->string('background')->default('#f1f1f1');
             $table->string('banner')->nullable();
