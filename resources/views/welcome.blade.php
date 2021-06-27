@@ -18,7 +18,7 @@
     <div class="card shadow p-3">
         <div class="card-body">
             <div class="media text-center">
-                <img src="https://uifaces.co/our-content/donated/gPZwCbdS.jpg" class="rounded-circle" alt="image" width="100px" height="100px">
+                <img src="{{ Storage::url($setting->image) }}" class="rounded-circle" alt="image" width="100px" height="100px">
                 <div class="media-body m-2">
                   <h5 class="align-items-center mt-2">
                       {{ $setting->name }}
