@@ -52,7 +52,7 @@
               <div class="list-group">
                 @foreach ($networks as $network)
                     <a href="{{ $network->action_type.$network->action }}" class="list-group-item list-group-item-action py-2" target="_blank">
-                        <i class="{{ $network->icon }}"></i> {{ $network->title }}
+                        {!! $network->icon !!} {{ $network->title }}
                     </a>
                 @endforeach
               </div>

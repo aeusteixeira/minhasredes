@@ -4,7 +4,7 @@
         <li class="list-group-item d-flex justify-content-between align-items-start py-2">
             <div class="ms-2 me-auto">
               <div class="">
-                  <i class="fab fa-facebook-square"></i> {{ $network->title }}
+                {!! $network->icon !!} {{ $network->title }}
               </div>
             </div>
             <button class="btn btn-danger badge bg-danger rounded-pill" wire:click="delete({{ $network->id }})">
@@ -32,8 +32,15 @@
                         <th>
                             <div class="form-group">
                                 <select class="form-select" wire:model="icon">
-                                    <option value="icon_1">Icon 1</option>
-                                    <option value="icon_2">Icon 2</option>
+                                    <option>Selecione um ícone</option>
+                                    <option value='<i class="fab fa-facebook-square"></i>'>Facebook</option>
+                                    <option value='<i class="fab fa-instagram"></i>'>Instagram</option>
+                                    <option value='<i class="fab fa-linkedin"></i>'>Linkedin</option>
+                                    <option value='<i class="fab fa-tiktok"></i>'>TikTok</option>
+                                    <option value='<i class="fab fa-spotify"></i>'>Spotify</option>
+                                    <option value='<i class="fab fa-whatsapp"></i>'>WhatsApp</option>
+                                    <option value='<i class="fas fa-at"></i>'>E-mail</option>
+                                    <option value='<i class="fas fa-link"></i>'>Link</option>
                                 </select>
                             </div>
                         </th>
@@ -58,4 +65,7 @@
             <button class="btn btn-primary" type="submit">Cadastrar</button>
         </div>
     </form>
+    @push('scripts')
+
+    @endpush
 </div>
