@@ -15,8 +15,8 @@ class SettingSeeder extends Seeder
     public function run()
     {
         Setting::create([
-            'name' => 'Matheus Teixeira',
-            'description' => 'Sou desenvolvedor back-end e evangelista das boas práticas. Gosto de viajar e conhecer pessoas. Eu escrevo códigos, tiro fotos de coisas do dia a dia e coleciono discos de vinil.',
+            'name' => 'Your name or name of your company',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur magna orci, convallis non malesuada eget, finibus quis quam. Suspendisse metus justo, pulvinar eget tincidunt at, bibendum sit amet elit. Aliquam tincidunt luctus venenatis.',
         ]);
     }
 }
